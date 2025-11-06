@@ -94,6 +94,7 @@ public class ChatClient extends AbstractClient
     System.exit(0);
   }
   
+  //Exercise 1
   protected void connectionClosed() {
 	  clientUI.display("Server has shut down. Connection closed.");
 	  System.exit(0);
@@ -103,6 +104,10 @@ public class ChatClient extends AbstractClient
 	  clientUI.display("Server has unexpectedly disconnected. Client will close.");
 	  System.exit(0);
   }
+  
+  //Exercise 2
+  
+  
 }
 //End of ChatClient class
 

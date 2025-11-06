@@ -4,6 +4,7 @@ package edu.seg2105.edu.server.backend;
 // license found at www.lloseng.com 
 
 
+import edu.seg2105.client.common.ChatIF;
 import ocsf.server.*;
 
 /**
@@ -23,6 +24,7 @@ public class EchoServer extends AbstractServer
    * The default port to listen on.
    */
   final public static int DEFAULT_PORT = 5555;
+  private ChatIF serverUI; 
   
   //Constructors ****************************************************
   
@@ -35,6 +37,10 @@ public class EchoServer extends AbstractServer
   {
     super(port);
   }
+  public EchoServer(int port, ChatIF serverUI) {
+	    super(port);
+	    this.serverUI = serverUI;
+	}
 
   
   //Instance methods ************************************************
@@ -81,6 +87,7 @@ public class EchoServer extends AbstractServer
   }
 
   
+ 
   //Class methods ***************************************************
   
   /**
