@@ -13,7 +13,7 @@ public class ServerConsole implements ChatIF {
     private BufferedReader fromConsole;
 
     public ServerConsole(int port) {
-        server = new EchoServer(port, this); 
+        server = new EchoServer(port, this);
         fromConsole = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -30,7 +30,8 @@ public class ServerConsole implements ChatIF {
     }
 
     private void handleCommand(String command) {
-        if (command == null || command.trim().isEmpty()) return;
+        if (command == null || command.trim().isEmpty())
+            return;
 
         if (!command.startsWith("#")) {
             server.sendToAllClients("SERVER MSG> " + command);
@@ -95,7 +96,6 @@ public class ServerConsole implements ChatIF {
         System.out.println(message);
     }
 
- 
     public static void main(String[] args) {
         int port = DEFAULT_PORT;
 
@@ -106,6 +106,6 @@ public class ServerConsole implements ChatIF {
 
         ServerConsole console = new ServerConsole(port);
         console.display("Server console started on port " + port);
-        console.accept(); 
+        console.accept();
     }
 }
